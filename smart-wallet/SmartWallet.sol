@@ -3,14 +3,14 @@ pragma solidity 0.8.22;
 
 contract SmartWallet {
     address payable owner;
+    address payable nextOwner;
 
     mapping(address => uint) public allowance;
     mapping(address => bool) public isAllowedToSend;
 
     mapping(address => bool) public guardians;
-    address payable nextOwner;
 
-    mapping(address =? mapping(address => bool)) nextOwnerGuardianVotedBool;
+    mapping(address => mapping(address => bool)) nextOwnerGuardianVotedBool;
 
     mapping(address => uint) public lastSent;
 
