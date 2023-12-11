@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.15;
 
-contract MessengerContract {
+contract Messenger {
     uint public changeCounter;
     address public owner;
     string public message;

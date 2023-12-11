@@ -20,10 +20,10 @@ interface ERC20Interface {
 }
 
 
-// The Mirtha Token Contract
-contract Mirtha is ERC20Interface{
-    string public name = "Mirtha";
-    string public symbol = "MRT";
+// The Placeholder Token Contract
+contract Placeholder is ERC20Interface{
+    string public name = "Placeholder";
+    string public symbol = "PLC";
     uint public decimals = 0;
     uint public override totalSupply;
 
@@ -81,7 +81,7 @@ contract Mirtha is ERC20Interface{
 }
 
 
-contract MirthaICO is Mirtha{
+contract PlaceholderICO is Placeholder{
     address public admin;
     address payable public deposit;
     uint tokenPrice = 0.001 ether;  // 1 ETH = 1000 CRTP, 1 CRPT = 0.001
@@ -192,7 +192,7 @@ contract MirthaICO is Mirtha{
     function transferFrom(address from, address to, uint tokens) public override returns (bool success){
         require(block.timestamp > tokenTradeStart); // the token will be transferable only after tokenTradeStart
 
-        Mirtha.transferFrom(from, to, tokens);  // same as super.transferFrom(to, tokens);
+        Placeholder.transferFrom(from, to, tokens);  // same as super.transferFrom(to, tokens);
         return true;
 
     }
